@@ -24,9 +24,11 @@ class MealOrder extends StatelessWidget {
                         tooltip: "Back",
                         icon: const Icon(Icons.arrow_back)),
                     IconButton(
-                        onPressed: (() {}),
-                        tooltip: "Favorite",
-                        icon: const Icon(Icons.favorite))
+                        onPressed: (() {
+                          Navigator.pushNamed(context, "/Home");
+                        }),
+                        tooltip: "Home",
+                        icon: const Icon(Icons.home))
                   ],
                 ),
               ),

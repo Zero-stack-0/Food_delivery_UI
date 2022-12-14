@@ -281,11 +281,15 @@ class _HomeState extends State<Home> {
                 color: Color.fromARGB(77, 66, 64, 64),
                 size: 32,
               ),
-              const Icon(
-                Icons.shopping_bag,
-                color: Color.fromARGB(77, 66, 64, 64),
-                size: 32,
-              ),
+              IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/MealOrder");
+                  },
+                  icon: const Icon(
+                    Icons.shopping_bag,
+                    color: Color.fromARGB(77, 66, 64, 64),
+                    size: 32,
+                  ))
             ],
           )
         ])),

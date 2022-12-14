@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/Home.dart';
+import 'package:fooddelivery/login.dart';
 import 'package:fooddelivery/mealdetail.dart';
 import 'package:fooddelivery/mealorder.dart';
 
@@ -15,9 +16,11 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       routes: {
-        '/': (context) => const Home(),
+        '/': (context) => const Loginpage(),
+        '/Home': (context) => const Home(),
         '/MealDetail': (context) => const MealDetail(),
         '/MealOrder': (context) => const MealOrder(),
+        '/Login': ((context) => const Loginpage())
       },
     );
   }
