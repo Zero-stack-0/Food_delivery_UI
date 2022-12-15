@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class Loginpage extends StatefulWidget {
-  const Loginpage({super.key});
+class Singup extends StatelessWidget {
+  const Singup({super.key});
 
-  @override
-  State<Loginpage> createState() => _LoginpageState();
-}
-
-class _LoginpageState extends State<Loginpage> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -25,10 +20,10 @@ class _LoginpageState extends State<Loginpage> {
               Positioned(
                   top: 15.h,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(40.w))),
-                    height: 10.h,
+                        borderRadius: BorderRadius.all(Radius.circular(40))),
+                    height: 20.h,
                     width: 100.w,
                   )),
             ],
@@ -45,7 +40,7 @@ class _LoginpageState extends State<Loginpage> {
                 style: TextStyle(
                     color: Color.fromARGB(255, 69, 66, 66), fontSize: 15),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const <Widget>[
@@ -68,9 +63,33 @@ class _LoginpageState extends State<Loginpage> {
                   )
                 ],
               ),
-              Container(height: 12.h),
+              const SizedBox(height: 70),
               Column(
                 children: <Widget>[
+                  Container(
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 222, 220, 220),
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
+                      height: 6.h,
+                      width: 80.w,
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            labelText: "Email",
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.email,
+                              size: 30,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      )),
+                  Container(
+                    height: 2.h,
+                  ),
                   Container(
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
@@ -119,47 +138,46 @@ class _LoginpageState extends State<Loginpage> {
                       ))
                 ],
               ),
-              Container(height: 12.h),
+              Container(
+                height: 12.h,
+              ),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, "/Home");
                 },
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/Home');
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 245, 95, 36),
-                        borderRadius: BorderRadius.all(Radius.circular(30))),
-                    height: 6.h,
-                    width: 80.w,
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 9.sp),
-                    ),
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 245, 95, 36),
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  height: 6.h,
+                  width: 80.w,
+                  child: const Text(
+                    "Sign Up",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              Container(
+                height: 1.h,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const Text(
-                    "Don't have account",
+                    "Already have account",
                     style: TextStyle(fontSize: 16),
                   ),
                   const SizedBox(width: 10),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/SingUp');
+                      Navigator.pushNamed(context, '/Login');
                     },
                     child: const Text(
-                      "Sign up",
+                      "Sign In",
                       style: TextStyle(
                         fontSize: 16,
                         color: Color.fromARGB(255, 245, 95, 36),
